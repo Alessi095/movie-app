@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { ListMoviesComponent } from './list-movies/list-movies.component';
 import { DetailMovieComponent } from './detail-movie/detail-movie.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { DetailMovieComponent } from './detail-movie/detail-movie.component';
     DetailMovieComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
