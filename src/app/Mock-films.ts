@@ -1,4 +1,5 @@
 import { Movies } from './movies';
+import { MoviesDetail} from './movies-detail';
 
 export const Moviess: Movies[] = [
 
@@ -25,3 +26,22 @@ export const Moviess: Movies[] = [
       
   
 ];
+
+
+export const MovieDetail:MoviesDetail={
+    Title: "Pirati",
+    Year:"2012" ,
+    Rated:"ecco ",
+    Released:"1980",
+    Runtime:"ciao" ,
+    Genre: "war",
+    Directorstring:"bella",
+    Writer: "ecco",
+    Actors: "pare",
+    Plot:"plottime" ,
+    Language:"italiano" ,
+    Country:"spain", 
+    Awards:"1Guerra",
+    Poster:"http://www.omdbapi.com/src/poster.jpg" ,
+
+}

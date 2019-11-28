@@ -1,18 +1,14 @@
-
-<div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
+<div class="container">
+ <div class="col-sm-4" *ngFor="let Movies of MoviesList">
+  <div class="card" >
+    <img src="{{ Movies.Poster }}" class="card-img-top" alt="..." >
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <h5 class="card-title">{{Movies.Title}}</h5>
+      <p class="card-text">{{Movies.Type}} </p>
+      <p class="card-text">{{Movies.imdbID}} </p>
+      <a href="#" class="btn btn-primary" (click)="onSelect(Movies.imdbID)">Detail Movie</a>
     </div>
-  </div>
-
-<ul>
-    <li *ngFor="let Movies of MoviesList">
-        <span class="badge"><img src="{{ Movies.Poster }}"></span>  <br>{{Movies.Title}}
-        {{Movies.Year}}<br>
-        {{Movies.imdbID}}<br>
-        {{Movies.Type}}<br>
-    </li>
-</ul>
+   </div>
+ </div>
+</div>
+<app-detail-movie [idMovies]="idClicked"></app-detail-movie> 

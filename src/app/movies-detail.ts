@@ -1,9 +1,9 @@
 export class MoviesDetail{
    
    
-    Title: string;
-    Year: string;
-    Rated:string;
+    Title: string
+    Year: string
+    Rated:string
     Released:string
     Runtime:string 
     Genre: string

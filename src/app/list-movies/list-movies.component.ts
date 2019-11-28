@@ -11,12 +11,21 @@ import { Movies } from '../movies';
 export class ListMoviesComponent implements OnInit {
 
   MoviesList:Movies[];
+  idClicked:string;
+  
 
   constructor(private MoviesService:MoviesServiceService) { }
 
   getMovies(): void {
-    this.MoviesService.getMovies()
-        .subscribe(Movies => this.MoviesList = Movies);
+    this.MoviesService.getMovies("terminator")
+        .subscribe(Movies => {
+          console.log(Movies);
+          this.MoviesList = Movies.Search
+          });
+  }
+
+  onSelect(id:string):void{
+    this.idClicked=id;
   }
 
   ngOnInit() {

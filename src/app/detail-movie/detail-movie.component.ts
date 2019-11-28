@@ -1,15 +1,54 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input, OnChanges,SimpleChanges } from '@angular/core';
+import { MoviesServiceService } from '../movies-service.service';
+import { MoviesDetail } from '../movies-detail';
+import { Movies } from '../movies';
+
+
 
 @Component({
   selector: 'app-detail-movie',
   templateUrl: './detail-movie.component.html',
   styleUrls: ['./detail-movie.component.css']
 })
-export class DetailMovieComponent implements OnInit {
+export class DetailMovieComponent implements OnInit, OnChanges {
 
-  constructor() { }
+  @Input() idMovies: string;
+  MoviesDetail:MoviesDetail;
+
+  constructor(private MoviesService:MoviesServiceService) { }
 
   ngOnInit() {
+    console.log(this.idMovies);
+    // this.getDetail();
+
   }
 
-}
+  ngOnChanges() {
+    console.log(this.idMovies);
+    this.getDetail(this.idMovies);
+
+  }
+
+
+
+  getDetail(chenges:string){
+    this.MoviesService.getDetail(chenges).subscribe(movieDetail => {
+      console.log("funziona" +movieDetail)
+      this.MoviesDetail=movieDetail;
+    });
+   }
+  }
+
+  // getDetail(){
+  //   if(this.idMovies.length===undefined){
+  //     this.idMovies="";
+  //   }
+  //   else{
+  //   this.MoviesService.getDetail(this.idMovies).subscribe(movieDetail => {
+  //     console.log("funziona" +movieDetail)
+  //     this.MoviesDetail=movieDetail.Search;
+  //   });
+  //  }
+  // }
+
+

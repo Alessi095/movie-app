@@ -6,17 +6,21 @@ import { SearchFormComponent } from './search-form/search-form.component';
 import { ListMoviesComponent } from './list-movies/list-movies.component';
 import { DetailMovieComponent } from './detail-movie/detail-movie.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TitleComponent } from './title/title.component';
+import { HttpClientModule }    from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchFormComponent,
     ListMoviesComponent,
-    DetailMovieComponent
+    DetailMovieComponent,
+    TitleComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+      HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
