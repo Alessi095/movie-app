@@ -13,10 +13,10 @@ import { Movies } from '../movies';
 export class DetailMovieComponent implements OnInit, OnChanges {
 
   @Input() idMovies: string;
-  MoviesDetail:MoviesDetail;
+  moviesDetail:MoviesDetail;
 
   constructor(private MoviesService:MoviesServiceService) { }
-
+  //prombela dettagglio 
   ngOnInit() {
     console.log(this.idMovies);
     // this.getDetail();
@@ -25,8 +25,8 @@ export class DetailMovieComponent implements OnInit, OnChanges {
 
   ngOnChanges() {
     console.log(this.idMovies);
-    this.getDetail(this.idMovies);
-
+    if(this.idMovies) this.getDetail(this.idMovies);
+      
   }
 
 
@@ -34,7 +34,7 @@ export class DetailMovieComponent implements OnInit, OnChanges {
   getDetail(chenges:string){
     this.MoviesService.getDetail(chenges).subscribe(movieDetail => {
       console.log("funziona" +movieDetail)
-      this.MoviesDetail=movieDetail;
+      this.moviesDetail=movieDetail;
     });
    }
   }

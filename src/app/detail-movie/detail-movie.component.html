@@ -1,12 +1,14 @@
-<div *ngIf="MoviesDetail">
+<div *ngIf="moviesDetail">
         <div >
-                <div class="col-sm-4">
+                <div class="col-sm-9">
                  <div class="card" >
-                   <img src="{{ MoviesDetail.Poster }}" class="card-img-top" alt="..." >
+                   <img src="{{ moviesDetail.Poster }}" class="card-img-top" alt="..." >
                    <div class="card-body">
-                     <h5 class="card-title">{{MoviesDetail.Title}}</h5>
-                     <p class="card-text">{{MoviesDetail.Year}} </p>
-                     <p class="card-text">{{MoviesDetail.Actors}} </p>
+                     <h5 class="card-title">{{moviesDetail.Title}}</h5>
+                     <p class="card-text">Anno: {{moviesDetail.Year}} </p>
+                     <p class="card-text"> Attori: {{moviesDetail.Actors}} </p>
+                     <p class="card-text">Trama: {{moviesDetail.Related}} </p>
+                     <p class="card-text">{{moviesDetail.Plot}} </p>
                    </div>
 
                   </div>

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="MoviesList">
  <div class="col-sm-4" *ngFor="let Movies of MoviesList">
   <div class="card" >
     <img src="{{ Movies.Poster }}" class="card-img-top" alt="..." >
@@ -11,4 +11,4 @@
    </div>
  </div>
 </div>
-<app-detail-movie [idMovies]="idClicked"></app-detail-movie> 
+ <app-detail-movie [idMovies]="idClicked" class="float-right"></app-detail-movie>  

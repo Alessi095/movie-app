@@ -1,4 +1,4 @@
-/* .container{
+ .container{
     width:50%;
     display:flex;
     float:left;
@@ -6,8 +6,15 @@
 
 }
 
+
 .my-style-row-cards{
     margin-left:1.80%;
     
-} */
+} 
 
+
+.float-right{
+    max-width:45%;
+    width:45%;
+    float:right;
+}
