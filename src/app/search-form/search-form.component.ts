@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchFormComponent implements OnInit {
 
+  ParameterSerch:string;
+
+  add(name: string): void {
+    this.ParameterSerch=name;
+  }
+
   constructor() { }
 
   ngOnInit() {

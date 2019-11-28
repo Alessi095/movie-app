@@ -1,6 +1,7 @@
 <div class="my-style-search">
-<input type="text" placeholder="Search.." name="search" class="form-control col-sm-4 my-style-width-input" id="float-input">
-<button type="submit" type="button" class="btn btn-primary">Search</button>
+<input type="text" placeholder="Search.." name="search" class="form-control col-sm-4 my-style-width-input" id="float-input"  #SerchText/>
+<button type="submit" type="button" class="btn btn-primary" (click)="add(SerchText.value); SerchText.value=''">Search</button>
 </div>
 <div class="float-none"></div>
 
+<app-list-movies [parameterSerchh]="ParameterSerch"></app-list-movies>

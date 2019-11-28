@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { MoviesServiceService } from '../movies-service.service';
 import { Movies } from '../movies';
 
@@ -12,12 +12,12 @@ export class ListMoviesComponent implements OnInit {
 
   MoviesList:Movies[];
   idClicked:string;
-  
+  @Input() parameterSerchh:string;
 
   constructor(private MoviesService:MoviesServiceService) { }
 
-  getMovies(): void {
-    this.MoviesService.getMovies("terminator")
+  getMovies(parameterSerchh): void {
+    this.MoviesService.getMovies(parameterSerchh)
         .subscribe(Movies => {
           console.log(Movies);
           this.MoviesList = Movies.Search
@@ -28,8 +28,14 @@ export class ListMoviesComponent implements OnInit {
     this.idClicked=id;
   }
 
+  ngOnChanges() {
+    console.log(this.parameterSerchh);
+    if(this.parameterSerchh) this.getMovies(this.parameterSerchh);
+      
+  }
+
   ngOnInit() {
-    this.getMovies();
+    
   }
 
 }
