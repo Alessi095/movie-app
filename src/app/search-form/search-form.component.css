@@ -3,15 +3,12 @@
     float:left;
 }
 
-/* .my-style-search{
-    
-    margin-top:1.7%;
-    margin-bottom:5%;
-
+.my-style-wrapper{
+    margin-top:20%;
     
 }
 
+.my-style-title{
+    font-family: 'Permanent Marker', cursive;
 
-.float-none{
-    float:none;
-} */ 
+}

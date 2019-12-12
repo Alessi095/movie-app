@@ -2,6 +2,8 @@ import { Component, OnInit,Input, OnChanges,SimpleChanges } from '@angular/core'
 import { MoviesServiceService } from '../movies-service.service';
 import { MoviesDetail } from '../movies-detail';
 import { Movies } from '../movies';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 
 
@@ -10,24 +12,35 @@ import { Movies } from '../movies';
   templateUrl: './detail-movie.component.html',
   styleUrls: ['./detail-movie.component.css']
 })
-export class DetailMovieComponent implements OnInit, OnChanges {
+export class DetailMovieComponent implements OnInit{
 
-  @Input() idMovies: string;
+  // @Input() idMovies: string;
+  DetailUrl:string=this.route.snapshot.paramMap.get('Detail');
   moviesDetail:MoviesDetail;
 
-  constructor(private MoviesService:MoviesServiceService) { }
+
+  constructor(private MoviesService:MoviesServiceService,
+    private route: ActivatedRoute,
+    private location: Location) { }
   //prombela dettagglio 
+
+  goBack(): void {
+    this.location.back();
+  }
+
+
   ngOnInit() {
-    console.log(this.idMovies);
+    console.log(this.DetailUrl);
+     this.getDetail(this.DetailUrl);
     // this.getDetail();
 
   }
 
-  ngOnChanges() {
-    console.log(this.idMovies);
-    if(this.idMovies) this.getDetail(this.idMovies);
+  // ngOnChanges() {
+  //   console.log(this.DetailUrl);
+  //   if(this.DetailUrl) this.getDetail(this.DetailUrl);
       
-  }
+  // }
 
 
 

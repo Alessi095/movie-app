@@ -1,7 +1,10 @@
-<div class="my-style-search">
-<input type="text" placeholder="Search.." name="search" class="form-control col-sm-4 my-style-width-input" id="float-input"  #SerchText/>
-<button type="submit" type="button" class="btn btn-primary" (click)="add(SerchText.value); SerchText.value=''">Search</button>
-</div>
+<div class="my-style-wrapper">
+    <h1 class="text-center text-white my-style-title"> MOVIEAPP</h1>
+    <div class="my-style-search d-flex  justify-content-center mt-5">
+        <input type="text" placeholder="Search.." name="search" class="form-control col-4 text-center my-style-immage-button" id="float-input"  #SerchText/>
+        <button type="button" class="btn btn-light"  routerLink="/listMovies/{{SerchText.value}}"><img class="text-white" src="../assets/iconaaa.png"> </button> 
+    </div>
 <div class="float-none"></div>
+</div>
 
-<app-list-movies [parameterSerchh]="ParameterSerch"></app-list-movies>
+<!-- <app-list-movies [parameterSerchh]="ParameterSerch"></app-list-movies>  -->

@@ -1,6 +1,8 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { MoviesServiceService } from '../movies-service.service';
 import { Movies } from '../movies';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -12,11 +14,13 @@ export class ListMoviesComponent implements OnInit {
 
   MoviesList:Movies[];
   idClicked:string;
-  @Input() parameterSerchh:string;
+  changeParameter:string;
 
-  constructor(private MoviesService:MoviesServiceService) { }
 
-  getMovies(parameterSerchh): void {
+  constructor(private MoviesService:MoviesServiceService,
+              private route:ActivatedRoute) { }
+
+  getMovies(parameterSerchh:string): void {
     this.MoviesService.getMovies(parameterSerchh)
         .subscribe(Movies => {
           console.log(Movies);
@@ -28,13 +32,11 @@ export class ListMoviesComponent implements OnInit {
     this.idClicked=id;
   }
 
-  ngOnChanges() {
-    console.log(this.parameterSerchh);
-    if(this.parameterSerchh) this.getMovies(this.parameterSerchh);
-      
-  }
-
   ngOnInit() {
+    this.route.paramMap.subscribe(params => {
+      this.changeParameter = params.get("wordSerch");
+      this.getMovies(this.changeParameter);
+    })
     
   }
 

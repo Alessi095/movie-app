@@ -1,14 +1,15 @@
+<app-search-form></app-search-form>
 <div class="container" *ngIf="MoviesList">
- <div class="col-sm-4" *ngFor="let Movies of MoviesList">
+ <div class="col-4" *ngFor="let Movies of MoviesList">
   <div class="card" >
     <img src="{{ Movies.Poster }}" class="card-img-top" alt="..." >
     <div class="card-body">
       <h5 class="card-title">{{Movies.Title}}</h5>
       <p class="card-text">{{Movies.Type}} </p>
       <p class="card-text">{{Movies.imdbID}}</p>
-      <a href="#" class="btn btn-primary" (click)="onSelect(Movies.imdbID)">Detail Movie</a>
+      <a href="#" class="btn btn-primary" routerLink="DetailMovie/{{Movies.imdbID}}">Detail Movie</a>
     </div>
    </div>
  </div>
 </div>
- <app-detail-movie [idMovies]="idClicked" class="float-right"></app-detail-movie>  
+ <!-- <app-detail-movie [idMovies]="idClicked" class="float-right"></app-detail-movie>   -->

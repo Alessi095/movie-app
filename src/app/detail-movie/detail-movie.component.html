@@ -1,6 +1,5 @@
-<div *ngIf="moviesDetail">
-        <div >
-                <div class="col-sm-9">
+  <div *ngIf="moviesDetail">
+                <div class="col-9">
                  <div class="card" >
                    <img src="{{ moviesDetail.Poster }}" class="card-img-top" alt="..." >
                    <div class="card-body">
@@ -10,10 +9,10 @@
                      <p class="card-text">Trama: {{moviesDetail.Related}} </p>
                      <p class="card-text">{{moviesDetail.Plot}} </p>
                    </div>
-
                   </div>
+                     <button (click)="goBack()">go back</button>
+                </div> 
 
-                </div>
-        </div>
-</div>
+
+  </div>
    
