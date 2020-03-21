@@ -36,8 +36,7 @@ export class ListMoviesComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       this.changeParameter = params.get("wordSerch");
       this.getMovies(this.changeParameter);
-    })
-    
+    }); 
   }
 
 }

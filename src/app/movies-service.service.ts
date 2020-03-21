@@ -38,7 +38,7 @@ export class MoviesServiceService {
     
       return this.http.get<any>(`${this.MoviesUrl}${MovieSerch}`)
         .pipe(
-          tap(_ => console.log('fetched heroes')),
+          tap(_ => console.log('fetched ')),
           catchError(this.handleError<any>('getMovies', [])
           )
         );
